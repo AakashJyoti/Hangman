@@ -19,6 +19,15 @@
   align-self: stretch;
 }
 
+.reset_btn {
+  background-color: red;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
 @media screen and (max-width: 425px) {
   .status {
     font-size: 1.2rem;

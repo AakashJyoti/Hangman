@@ -4,9 +4,7 @@ import HangmanWord from "./components/HangmanWord";
 import Keyboard from "./components/Keyboard";
 import words from "./wordList.json";
 
-const getWord = () => {
-  return words[Math.floor(Math.random() * words.length)];
-};
+const getWord = () => words[Math.floor(Math.random() * words.length)];
 
 function App() {
   const [wordToGuess, setWordToGuess] = useState(getWord());
@@ -71,6 +69,18 @@ function App() {
         guessedLetters={guessedLetters}
         wordToGuess={wordToGuess}
       />
+      {isWin ||
+        (isLose && (
+          <button
+            className="reset_btn"
+            onClick={() => {
+              setWordToGuess(getWord());
+              setGuessedLetters([]);
+            }}
+          >
+            Reset
+          </button>
+        ))}
       <div className="keyboard">
         <Keyboard
           disabled={isLose || isWin}

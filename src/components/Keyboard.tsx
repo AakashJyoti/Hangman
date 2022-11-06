@@ -42,13 +42,7 @@ const Keyboard = ({
   disabled = false,
 }: kayboardProps) => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(50px, 1fr))",
-        gap: ".5rem",
-      }}
-    >
+    <div className={styles.key}>
       {KEYS.map((key) => {
         const isActive = activeLetters.includes(key);
         const isInactive = inactiveLetters.includes(key);

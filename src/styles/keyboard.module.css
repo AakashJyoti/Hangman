@@ -26,3 +26,9 @@
 .btn:focus:not(:disabled) {
   background-color: hsl(200, 100%, 75%);
 }
+
+.key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 0.5rem;
+}

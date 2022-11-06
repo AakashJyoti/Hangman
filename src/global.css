@@ -18,3 +18,9 @@
 .keyboard {
   align-self: stretch;
 }
+
+@media screen and (max-width: 425px) {
+  .status {
+    font-size: 1.2rem;
+  }
+}

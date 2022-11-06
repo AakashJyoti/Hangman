@@ -61,7 +61,6 @@ function App() {
 
   return (
     <div className="main">
-      <h1>HanGMan</h1>
       <div className="status">
         {isWin && "Winner! - Refresh to try again"}
         {isLose && "Nice try! - Refresh to try again"}

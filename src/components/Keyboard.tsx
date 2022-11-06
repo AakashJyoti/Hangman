@@ -28,7 +28,7 @@ const KEYS = [
   "z",
 ];
 
-type kayboardProps = {
+type keyboardProps = {
   activeLetters: string[];
   inactiveLetters: string[];
   addGuessedLetters: (letter: string) => void;
@@ -40,7 +40,7 @@ const Keyboard = ({
   inactiveLetters,
   addGuessedLetters,
   disabled = false,
-}: kayboardProps) => {
+}: keyboardProps) => {
   return (
     <div className={styles.key}>
       {KEYS.map((key) => {

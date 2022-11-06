@@ -28,7 +28,19 @@ const KEYS = [
   "z",
 ];
 
-const Keyboard = () => {
+type kayboardProps = {
+  activeLetters: string[];
+  inactiveLetters: string[];
+  addGuessedLetters: (letter: string) => void;
+  disabled?: boolean;
+};
+
+const Keyboard = ({
+  activeLetters,
+  inactiveLetters,
+  addGuessedLetters,
+  disabled = false,
+}: kayboardProps) => {
   return (
     <div
       style={{
@@ -37,11 +49,22 @@ const Keyboard = () => {
         gap: ".5rem",
       }}
     >
-      {KEYS.map((key) => (
-        <button className={`${styles.btn}`} key={key}>
-          {key}
-        </button>
-      ))}
+      {KEYS.map((key) => {
+        const isActive = activeLetters.includes(key);
+        const isInactive = inactiveLetters.includes(key);
+        return (
+          <button
+            onClick={() => addGuessedLetters(key)}
+            className={`${styles.btn} 
+            ${isActive ? styles.active : ""}
+            ${isInactive ? styles.inactive : ""}`}
+            disabled={isActive || isInactive || disabled}
+            key={key}
+          >
+            {key}
+          </button>
+        );
+      })}
     </div>
   );
 };

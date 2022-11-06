@@ -60,8 +60,8 @@ function App() {
   return (
     <div className="main">
       <div className="status">
-        {isWin && "Winner! - Refresh to try again"}
-        {isLose && "Nice try! - Refresh to try again"}
+        {isWin && "Winner!"}
+        {isLose && "Nice try!"}
       </div>
       <HangmanDrawing noOfGuess={inCorrectLetters.length} />
       <HangmanWord
